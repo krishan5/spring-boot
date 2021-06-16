@@ -1,5 +1,6 @@
 package com.kk.springboot.restController;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,12 @@ public class HelloWorldController {
 	 * Now we have mentioned the path here or if we mentioned at class level using @RequestMapping("/hello-world")
 	 * then this gonna access through >> http://localhost:8080/hello-world
 	 */
-	@RequestMapping(method = RequestMethod.GET, path = "/hello-world")
+	//@RequestMapping(method = RequestMethod.GET, path = "/hello-world")
+	
+	/**
+	 * This is the alternative way of using @RequestMapping and most recommendable way too.
+	 */
+	@GetMapping(path = "/hello-world")
 	public String helloWorld() {
 		return "Hello World !";
 	}
