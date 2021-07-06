@@ -1,9 +1,9 @@
 package com.kk.springboot.restController;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.kk.springboot.entity.HelloWorld;
 
 @RestController
 public class HelloWorldController {
@@ -26,6 +26,11 @@ public class HelloWorldController {
 	@GetMapping(path = "/hello-world")
 	public String helloWorld() {
 		return "Hello World !";
+	}
+	
+	@GetMapping(path = "/hello-world-2")
+	public HelloWorld helloWorld2() {
+		return new HelloWorld("Hello World 2 !");
 	}
 	
 }
