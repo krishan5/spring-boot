@@ -3,6 +3,7 @@ package com.kk.springboot.service;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -37,6 +38,18 @@ public class UserDaoService {
 		for(User user : userData) {
 			if(user.getId() == id)
 				return user;
+		}
+		return null;
+	}
+
+	public User deleteUserById(int id) {
+		Iterator<User> iterator = userData.iterator();
+		while(iterator.hasNext()) {
+			User user = iterator.next();
+			if(user.getId() == id) {
+				iterator.remove();
+				return user;
+			}
 		}
 		return null;
 	}
