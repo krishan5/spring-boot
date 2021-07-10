@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.kk.springboot.entity.User;
 
 @Component
-public class UserService {
+public class UserDaoService {
 	private static List<User> userData = new ArrayList<>();
 	private static int userCount;
 	
