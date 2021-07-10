@@ -1,6 +1,7 @@
 package com.kk.springboot.restController;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kk.springboot.entity.HelloWorld;
@@ -33,4 +34,8 @@ public class HelloWorldController {
 		return new HelloWorld("Hello World 2 !");
 	}
 	
+	@GetMapping(path = "/hello-world/{pathVariable}")
+	public HelloWorld helloWorld3(@PathVariable(name = "pathVariable") String pathVariable) {
+		return new HelloWorld(pathVariable);
+	}
 }
