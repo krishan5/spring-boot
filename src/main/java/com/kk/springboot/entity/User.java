@@ -2,9 +2,18 @@ package com.kk.springboot.entity;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 public class User {
 	private int id;
+	
+	@NotNull
+	@Size(min = 2, message = "Name should have atleast 2 character.")
 	private String name;
+	
+	@Past
 	private LocalDate birthDate;
 	
 	public User() {

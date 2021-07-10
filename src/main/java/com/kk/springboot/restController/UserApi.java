@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Objects;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,8 +41,12 @@ public class UserApi {
 		return user;
 	}
 	
+	/**
+	 * To make use of validation, just put @Valid annotation on object you want to validate
+	 * and define validation type in that class (i.e. in User class) like @Size, @Past, @NotNull
+	 */
 	@PostMapping
-	public ResponseEntity<User> saveUser(@RequestBody User user) {
+	public ResponseEntity<User> saveUser(@Valid @RequestBody User user) {
 		User createdUser = userDaoService.save(user);
 		URI location = ServletUriComponentsBuilder
 				.fromCurrentRequest()
