@@ -7,6 +7,8 @@ import java.util.Objects;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +36,44 @@ public class UserApi {
 	}
 	
 	@GetMapping("/{id}")
-	public User getUser(@PathVariable("id") int id) {
+	public EntityModel<User> getUser(@PathVariable("id") int id) {
 		User user = userDaoService.findById(id);
 		if(Objects.isNull(user))
 			throw new UserNotFoundException("id="+id);
-		return user;
+		
+		/***HATEOAS***/
+		
+		/**
+		 * "_links" is attached in response along with values of User object :
+		 * 
+		 * {
+		 *   "id": 1,
+         *   "name": "Recker",
+         *   "birthDate": "1994-09-28",
+		 *   "_links": {
+         *     "all-users": {
+         *       "href": "http://localhost:8080/users"
+         *     }
+         *   }
+         * }
+		 */
+		
+		EntityModel<User> entityModel = EntityModel.of(user);
+		
+		//Instead of hard coding the link to entityModel, what we are saying we want hard coded link related 
+		//to this specific method i.e. getAllUsers() method and build the proper link to access it.
+		WebMvcLinkBuilder linkToUsers = WebMvcLinkBuilder.linkTo(
+				WebMvcLinkBuilder.methodOn(this.getClass()).getAllUsers());
+		//This is easy way to do above WebMvcLinkBuilder implementation importing static methods like :
+		// import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+		//Then it will be accessed like this :
+		// WebMvcLinkBuilder linkToUsers = linkTo(methodOn(this.getClass()).getAllUsers());
+		
+		//Adding that link to entityModel. Also making relation of prepared link. Given value here ("all-users")
+		//will be name of that link and added into response.
+		entityModel.add(linkToUsers.withRel("all-users"));
+		
+		return entityModel;
 	}
 	
 	/**
