@@ -19,6 +19,11 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-validation' //We will get validation-api and hibernate-validator jars through this.
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	
+	//For content negotiation
+	//Just add header "accept" with value "application/xml" to get response in xml format
+	//and "application/json" to get response in json format
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.4'
 	runtimeOnly 'com.h2database:h2'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
