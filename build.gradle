@@ -24,6 +24,13 @@ dependencies {
 	//Just add header "accept" with value "application/xml" to get response in xml format
 	//and "application/json" to get response in json format
 	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.4'
+	
+	//Swagger openapi UI for presentation of application endpoints : 
+	//You can use it by hitting following url :
+	// localhost:8080/swagger-ui.html  or
+	// localhost:8080/swagger-ui/index.html
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.9'
+	
 	runtimeOnly 'com.h2database:h2'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
