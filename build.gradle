@@ -21,6 +21,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator' // localhost:8080/actuator
 	
+	//Helps to explore the APIs in easy way. Instead of using rest api clients, we can use hal-explorer (depends upon the interest of usage)
+	//Enter absolute url into it like http://localhost:8080/actuator or http://localhost:8080/users etc, it will provide you all its links like swagger do. 
+	implementation 'org.springframework.data:spring-data-rest-hal-explorer' //localhost:8080/explorer
+	
 	//For content negotiation
 	//Just add header "accept" with value "application/xml" to get response in xml format
 	//and "application/json" to get response in json format
