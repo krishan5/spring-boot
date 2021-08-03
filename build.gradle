@@ -29,6 +29,7 @@ dependencies {
 	//You can use it by hitting following url :
 	// localhost:8080/swagger-ui.html  or
 	// localhost:8080/swagger-ui/index.html
+	// localhost:8080/v3/api-docs //Swagger specification rebranded to OpenAPI definition
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.9'
 	
 	runtimeOnly 'com.h2database:h2'
