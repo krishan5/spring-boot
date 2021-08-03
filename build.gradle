@@ -19,6 +19,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-validation' //We will get validation-api and hibernate-validator jars through this.
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator' // localhost:8080/actuator
 	
 	//For content negotiation
 	//Just add header "accept" with value "application/xml" to get response in xml format
