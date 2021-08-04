@@ -31,6 +31,7 @@ public class FilteringController {
 		//Here we are mentioning that var1 and var2 variable's value will be returned on response.
 		SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("var1", "var2");
 		//Here we are mentioning that which class has above passed variables to be send in response and rest of variables will be filtered out.
+		//Don't forget to mention same name in that class too in @JsonFilter annotation.
 		FilterProvider filterProvider = new SimpleFilterProvider().addFilter("SomeBeanFilter", filter);
 		//Here we are adding filterProvider and class object whose variable going to be filtered out.
 		MappingJacksonValue mapping = new MappingJacksonValue(someBean);
