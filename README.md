@@ -2,32 +2,32 @@
 Spring boot and Spring cloud learning
 
 Topics covered :
-. Springboot auto configuration main keys features and logging
+1. Springboot auto configuration main keys features and logging
   Files : application.properties
-. @PathVariable, @RestController, @GetMapping, @RequestMapping, @PostMapping, @DeleteMapping
+2. @PathVariable, @RestController, @GetMapping, @RequestMapping, @PostMapping, @DeleteMapping
   Files : HelloWorldController.java, UserApi.java
-. Endpoints.
+3. Endpoints.
   Files : UserApi.java, UserDaoService.java, application.properties, UserNotFoundException.java
-. Customized general level exception handler
+4. Customized general level exception handler
   Files : CustomizedResponseEntityExceptionHandler.java, ExceptionResponse.java
-. Validation like @Valid, @Past, @Size, @NotNull
+5. Validation like @Valid, @Past, @Size, @NotNull
   Files : build.gradle, UserApi.java, User.java, CustomizedResponseEntityExceptionHandler.java
-. HATEOAS.
+6. HATEOAS.
   Files : build.gradle, UserApi.java
-. i18n.
+7. i18n.
   Files : HelloWorldController.java, messages.properties, message_fr.properties, message_nl.properties
-. Content negotiation.
+8. Content negotiation.
   Files : build.gradle
-. Swagger and OpenAPI.
+9. Swagger and OpenAPI.
   Files : build.gradle
-. Spring Actuator.
+10. Spring Actuator.
   Files : build.gradle, application.properties
-. HAL explorer.
+11. HAL explorer.
   Files : build.gradle
-. Static and Dynamic filtering of class variables on response.
+12. Static and Dynamic filtering of class variables on response.
   Files : User.java, FilteringController.java, SomeBean.java
-. Versioning.
+13. Versioning.
   Files : VersionController.java
-. Basic Authentication.
+14. Basic Authentication.
   Files : build.gradle, application.properties
  
