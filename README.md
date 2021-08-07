@@ -30,4 +30,12 @@ Topics covered :
   Files : VersionController.java
 14. Basic Authentication.
   Files : build.gradle, application.properties
+15. Richardson Maturity Model.
+  It helps in identifying "How Restful are you ?". 
+  It defines 3 different levels of Restful services.
+  Level 0 : Expose web services in Rest sytle i.e. started thinking about Rest implementation.
+  Level 1 : Expose resouces with proper URI.
+  Level 2 : Level 1 + HTTP Methods.
+  Level 3 : Level 2 + HATEOAS. (data + also next possible actions) here we are not only talking about the information of the request, 
+  but also telling what next possible action can be taken.
  
