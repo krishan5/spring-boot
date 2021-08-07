@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation' //We will get validation-api and hibernate-validator jars through this.
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator' // localhost:8080/actuator
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	
 	//Helps to explore the APIs in easy way. Instead of using rest api clients, we can use hal-explorer (depends upon the interest of usage)
 	//Enter absolute url into it like http://localhost:8080/actuator or http://localhost:8080/users etc, it will provide you all its links like swagger do. 
