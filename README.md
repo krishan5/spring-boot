@@ -38,4 +38,11 @@ Topics covered :
   Level 2 : Level 1 + HTTP Methods.
   Level 3 : Level 2 + HATEOAS. (data + also next possible actions) here we are not only talking about the information of the request, 
   but also telling what next possible action can be taken.
- 
+
+Best practice :
+1. Consumer first. Always have a clear idea about who your consumers are. Is it a web application or mobile application and have idea about what they want.
+Think about perspective of customers. What they think about the resources. Will they be understand naming of our resources.
+2. Always have best documentation of api and customers understand it easily and properly.
+3. Make best use of whatever HTTP provides like HTTP methods, Response status.
+4. Use Plurals.
+5. Use Nouns for resouces where possible.
