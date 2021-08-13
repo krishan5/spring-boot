@@ -1,5 +1,5 @@
 # spring-boot
-Spring boot and Spring cloud learning
+Spring boot learning
 
 Topics covered :
 1. Springboot auto configuration main keys features and logging
